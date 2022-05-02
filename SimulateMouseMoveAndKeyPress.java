@@ -1,4 +1,4 @@
-
+import java.io.File;
 // import java.io.IOException;
 // import java.awt.TextArea;
 import java.awt.event.KeyEvent;
@@ -85,7 +85,14 @@ public class SimulateMouseMoveAndKeyPress {
       TimeUnit.SECONDS.sleep(1);
       robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
       robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-
+      TimeUnit.SECONDS.sleep(4);
+      // copy
+      Desktop.getDesktop().open(new File("/home/bk/Desktop/java/copy.json"));
+      TimeUnit.SECONDS.sleep(5);
+      robot.keyPress(KeyEvent.VK_CONTROL);
+      robot.keyPress(KeyEvent.VK_V);
+      robot.keyRelease(KeyEvent.VK_CONTROL);
+      robot.keyRelease(KeyEvent.VK_V);
 
     } catch (AWTException e) {
 
